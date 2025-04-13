@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pastel Planner</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+</head>
+
+<body>
+
+
+<!-- Floating Menu Icon -->
+<div id="menuIcon" class="menu-icon">
+    <i class="ri-menu-4-line"></i>
+</div>
+
+<!-- Sidebar Menu -->
+<div id="sidebarMenu" class="sidebar-menu">
+    <div id="closeIcon" class="close-icon">
+        &times;
+    </div>
+    
+    <div class="user-info-menu">
+        <h2>
+            <!-- username -->
+        </h2>
+    </div>
+
+    <h3>Your Tags</h3>
+    <ul id="tag-list-menu">
+        <!-- Tags will be dynamically rendered here -->
+    </ul>
+
+    <div class="mobile-list-section">
+        <h2>Quick Notes</h2>
+        <div class="mobile-input-area">
+          <input type="text" id="mobileListInput" placeholder="Type something..." />
+          <button id="mobileAddBtn">+</button>
+        </div>
+        <ul id="mobileListContainer"></ul>
+      </div>
+      
+
+</div>
+
+  
+
+    <div class="loader-wrapper">
+        <div class="brand">Pastelane</div>
+        <div class="tagline">Walk the pastel path of productivity</div>
+    </div>
+
+    <div class="app-container">
+        <div class="header">
+        
+            <div class="logo">
+                <h1>Pastelane</h1>
+            </div>
+        </div>
+
+
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <div class="user-info">
+                <h2>
+                    <!-- username -->
+                </h2>
+            </div>
+
+            <h3>Your Tags</h3>
+            <ul id="tag-list">
+                <!-- Tags will be dynamically rendered here -->
+            </ul>
+
+
+            <div class="list-section">
+                <h2>My List</h2>
+                <div class="input-area">
+                  <input type="text" id="listInput" placeholder="Add a new item..." />
+                  <button id="addBtn">+</button>
+                </div>
+                <ul id="listContainer"></ul>
+              </div>
+              
+            
+
+
+            <!-- settings modal -->
+            <div class="settings-modal">
+                <div class="settings-modal-content">
+                    <span class="close-settings">&times;</span>
+                    <h2>👤 User Settings</h2>
+
+                    <label for="edit-username">Edit Name:</label>
+                    <input type="text" id="edit-username" placeholder="Enter your name" />
+                    <button id="save-username">💾 Save</button>
+
+                    <hr>
+
+                    <button id="clear-username" class="logout-btn">🚪 Logout / Clear Name</button>
+                </div>
+            </div>
+
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- settings button -->
+            <div class="settings">
+                <button id="settings-btn">⚙️Settings</button>
+            </div>
+
+            <div class="todo-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="today">Today</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+            </div>
+
+            <section class="your-todos">
+                <div class="section-header">
+                    <h2>To-Do List</h2>
+                    <p>Track and complete your daily tasks efficiently.</p>
+                </div>
+
+                <div class="todo-input">
+                    <input type="text" id="todo-text" placeholder="Enter a task..." />
+                    <label for="todo-tag">Tag:</label>
+                    <div class="select-wrapper">
+                        <select class="task-tag" id="todo-tag-select">
+                            <option value="none">Select Tag</option>
+                            <option value="Work">Work</option>
+                            <option value="Personal">Personal</option>
+                            <option value="Urgent">Urgent</option>
+                            <option value="Health">Health</option>
+                            <option value="Academics">Academics</option>
+                            <option value="Unwind">Unwind</option>
+                        </select>
+                        <input type="text" id="todo-tag" placeholder="Enter a tag (e.g. Work, Health)">
+                    </div>
+                    <button id="add-todo-btn">+ Add</button>
+                </div>
+                <div class="todo-cards" id="todo-container">
+                    <!-- Tasks will appear here -->
+                </div>
+            </section>
+
+            <!-- activity section modal -->
+            <div id="habit-note-popup" class="habit-note-popup" style="display: none;">
+                <textarea id="habit-note-textarea" placeholder="Write your note..."></textarea>
+                <button id="save-habit-note">Save</button>
+                <button id="close-habit-note">Close</button>
+            </div>
+
+
+            <section class="your-habits">
+                <div class="section-header">
+                    <h2>My Activities</h2>
+                    <p>Manage your habits, reminders, events, activities.</p>
+                </div>
+
+                <div class="habit-cards">
+                    <!-- Dynamically added habit-blocks will go here -->
+                </div>
+
+                <button id="add-habit-btn">+ Add Habit</button>
+            </section>
+
+
+
+            <!-- Note Popup -->
+            <div id="note-popup" class="note-popup hidden">
+                <div class="note-popup-content">
+                    <button id="close-note-popup" class="close-btn">×</button>
+                    <textarea id="note-textarea" placeholder="Write your notes here..."></textarea>
+                    <button id="save-note-btn">Save Note</button>
+                </div>
+            </div>
+
+            <section class="reminders">
+                <div class="section-header">
+                    <h2>Reminders 🚨</h2>
+                    <p>Never miss a thing! Add your reminders here.</p>
+                </div>
+
+                <div class="reminder-cards"></div>
+                <button id="add-reminder-btn">+ Add Reminder</button>
+            </section>
+
+
+            <!-- <span class="task-tag urgent">Urgent</span> -->
+            <!-- Filters -->
+
+
+        </main>
+    </div>
+
+
+
+    <!-- Add Habit Modal -->
+    <div id="habit-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-habit-btn" class="close">&times;</span>
+            <h3>Add New Habit</h3>
+            <input type="file" id="habit-image" accept="image/*" />
+            <input type="text" id="habit-name" placeholder="Enter habit name" />
+            <button id="save-habit-btn">Save Habit</button>
+        </div>
+    </div>
+
+    <!-- Reminder Modal -->
+    <div id="reminder-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-reminder-btn" class="close">&times;</span>
+            <h3>Add new Reminder</h3>
+            <input type="text" id="reminder-text" placeholder="Enter reminder" />
+            <input type="datetime-local" id="reminder-time" />
+            <button id="save-reminder-btn">Save Reminder</button>
+        </div>
+    </div>
+
+    <!-- to-do modal -->
+    <div id="todo-modal" class="modal">
+
+
+        <div class="modal-content">
+            <span id="close-todo-btn" class="close">&times;</span>
+            <h3>Add a Task</h3>
+            <input type="text" id="todo-text" placeholder="What do you need to do?">
+            <input type="date" id="todo-date">
+            <button id="save-todo-btn">Save Task</button>
+        </div>
+    </div>
+
+
+
+    <script defer src="script.js"></script>
+</body>
+
+</html>
