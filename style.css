@@ -520,8 +520,9 @@ body {
   align-items: center;
   /* justify-content: ; */
   overflow-x: auto;
+  overflow-y: hidden;
   gap: 1.2vw;
-  height: 38vh;
+  padding: 4vh 0;
 }
 
 .reminder-cards::-webkit-scrollbar {
