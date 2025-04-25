@@ -522,7 +522,6 @@ body {
   overflow-x: auto;
   overflow-y: hidden;
   gap: 1.2vw;
-  padding: 4vh 0;
 }
 
 .reminder-cards::-webkit-scrollbar {
@@ -538,7 +537,7 @@ body {
   border-radius: 10px;
   height: 34vh;
   width: 28%;
-  padding: 2vh;
+  padding: 4vh;
   flex-wrap: nowrap;
   cursor: pointer;
   flex-shrink: 0;
