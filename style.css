@@ -521,6 +521,7 @@ body {
   /* justify-content: ; */
   overflow-x: auto;
   gap: 1.2vw;
+  height: 38vh;
 }
 
 .reminder-cards::-webkit-scrollbar {
